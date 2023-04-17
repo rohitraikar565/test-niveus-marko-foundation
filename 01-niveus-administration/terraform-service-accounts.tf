@@ -30,7 +30,7 @@ resource "google_service_account_iam_binding" "principles" {
   for_each           = var.terraform_service_accounts
   service_account_id = google_service_account.tf-sa[each.key].name
   role               = "roles/iam.workloadIdentityUser"
-  members            = [for workspaces in each.value.workspaces : "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.tfe-pool.name}/attribute.terraform_workspace_id/${data.tfe_outputs.workspaces.values.workspaces[workspace]}"]
+  members            = [for workspace in each.value.workspaces : "principalSet://iam.googleapis.com/${google_iam_workload_identity_pool.tfe-pool.name}/attribute.terraform_workspace_id/${data.tfe_outputs.workspaces.values.workspaces[workspace]}"]
 }
 
 resource "google_folder_iam_member" "folders" {

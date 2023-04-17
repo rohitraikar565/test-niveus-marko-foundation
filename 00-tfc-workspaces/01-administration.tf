@@ -26,6 +26,11 @@ resource "tfe_workspace_variable_set" "cloud-administration-global-wif" {
   workspace_id    = tfe_workspace.cloud-administration-global.id
 }
 
+data "tfe_organization" "tfc-org" {
+  name = var.tfc_organization
+}
+
+
 resource "tfe_variable" "cloud-administration-global-tfc-organization-id" {
   category     = "terraform"
   key          = "tfc_organization_id"
