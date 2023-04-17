@@ -1,4 +1,4 @@
-administration_folder_name = "niveus-Cloud-Administration"
+administration_folder_name = "niv-Cloud-Administration"
 folders = {
   dev    = "nva-dev",
   stg    = "nva-stg",
