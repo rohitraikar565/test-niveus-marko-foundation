@@ -6,7 +6,7 @@ resource "tfe_workspace" "cloud-administration-global" {
   tag_names                     = ["administration", "global"]
   allow_destroy_plan            = true
   global_remote_state           = true
-  terraform_version             = "1.3.9"
+  terraform_version             = "1.3.3"
   structured_run_output_enabled = true
   queue_all_runs                = false
   working_directory             = "01-niveus-administration"
