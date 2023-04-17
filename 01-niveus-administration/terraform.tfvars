@@ -127,7 +127,7 @@ terraform_service_accounts = {
   }
   "tf-firewall-policy" = {
     description = "Service account used to set firewall policies."
-    workspaces  = ["05-niveus-hierarchical-firewall-policy"]
+    workspaces  = ["05-hierarchical-firewall-policy"]
     iam_folder_roles = {
       dev = [
         "roles/compute.orgSecurityResourceAdmin",
