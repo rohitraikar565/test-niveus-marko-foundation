@@ -1,4 +1,4 @@
-resource "tfe_workspace" "niveus-global-iam" {
+resource "tfe_workspace" "global-iam" {
   name                          = "02-global-iam"
   organization                  = var.tfc_organization
   project_id                    = tfe_project.project.id
