@@ -24,7 +24,7 @@ variable "folders" {
 variable "administration_folder_name" {
   description = "Name of the administration folder"
   type        = string
-  default     = "niveus-nva-Cloud administration"
+  default     = "niveus-Cloud administration"
 }
 
 variable "terraform_service_accounts" {
