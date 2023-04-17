@@ -1,7 +1,7 @@
 module "admin_project" {
   source                      = "terraform-google-modules/project-factory/google"
   version                     = "~> 14.1"
-  name                        = "niveus-cloud-administration"
+  name                        = "cloud-administration"
   random_project_id           = true
   disable_services_on_destroy = false
   folder_id                   = google_folder.admin.id
@@ -13,8 +13,8 @@ module "admin_project" {
     environment       = "cloud-administration"
     application_name  = "cloud-administration"
     billing_code      = "1234"
-    primary_contact   = "example1"
-    secondary_contact = "example2"
+    #primary_contact   = "example1"
+    #secondary_contact = "example2"
     business_code     = "abcd"
     env_code          = "b"
   }
@@ -57,7 +57,7 @@ module "org_audit_logs_project" {
 
   labels = {
     environment       = "production"
-    application_name  = "niveus-org-logging"
+    application_name  = "org-logging"
     billing_code      = "1234"
     primary_contact   = "example1"
     secondary_contact = "example2"
