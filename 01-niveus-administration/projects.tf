@@ -11,7 +11,7 @@ module "admin_project" {
   default_service_account     = "deprivilege"
   labels = {
     environment       = "cloud-administration"
-    application_name  = "niveus-cloud-administration"
+    application_name  = "cloud-administration"
     billing_code      = "1234"
     primary_contact   = "example1"
     secondary_contact = "example2"
