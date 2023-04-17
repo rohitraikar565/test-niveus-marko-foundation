@@ -1,7 +1,7 @@
 module "admin_project" {
   source                      = "terraform-google-modules/project-factory/google"
   version                     = "~> 14.1"
-  name                        = "niveus-nva-cloud-administration"
+  name                        = "niveus-cloud-administration"
   random_project_id           = true
   disable_services_on_destroy = false
   folder_id                   = google_folder.admin.id
@@ -11,7 +11,7 @@ module "admin_project" {
   default_service_account     = "deprivilege"
   labels = {
     environment       = "cloud-administration"
-    application_name  = "niveus-nva-cloud-administration"
+    application_name  = "niveus-cloud-administration"
     billing_code      = "1234"
     primary_contact   = "example1"
     secondary_contact = "example2"
