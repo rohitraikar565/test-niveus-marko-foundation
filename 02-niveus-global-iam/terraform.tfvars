@@ -1,7 +1,3 @@
-
-# This is an example of global IAM configuration. Use this to give users, groups, and service accounts access to folders,
-# projects, etc.
-
 org_bindings = {
   "roles/billing.viewer" = [
     "user:ashwin.kallaje1@niveussolutions.com",
@@ -29,7 +25,7 @@ folders_iam = {
       ]
     }
     conditional_bindings = []
-#  }
+  }
   # Bindings to the acme-prd folder
   "prd" = {
     bindings = {
@@ -58,6 +54,6 @@ audit_bindings = {
 
 billing_project_bindings = {
   "roles/viewer" = [
-    "user:ashwin.kallaje1@niveussolutions.com",
+     "user:ashwin.kallaje1@niveussolutions.com",
   ]
 }
