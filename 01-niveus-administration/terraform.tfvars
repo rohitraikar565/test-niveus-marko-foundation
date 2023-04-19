@@ -1,9 +1,9 @@
-administration_folder_name = "Niv-Cloud-Administration"
+administration_folder_name = "Niveus-Cloud-Administration"
 folders = {
-  dev    = "nva-dev",
-  stg    = "nva-stg",
-  prd    = "nva-prd",
-  shared = "nva-shared-services"
+  dev    = "niveus-asset-dev",
+  stg    = "niveus-asset-stg",
+  prd    = "niveus-asset-prd",
+  shared = "niveus-asset-shared-services"
 }
 terraform_service_accounts = {
   "tf-project-creator-dev" = {
