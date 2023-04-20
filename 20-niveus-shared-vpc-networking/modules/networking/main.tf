@@ -10,12 +10,12 @@ data "tfe_outputs" "admin-global" {
 
 data "tfe_outputs" "shared-services" {
   organization = var.tfc_organization
-  workspace    = "04-niveus-shared-services"
+  workspace    = "04-shared-services"
 }
 
 data "tfe_outputs" "org-policies" {
   organization = var.tfc_organization
-  workspace    = "03-niveus-org-policies"
+  workspace    = "03-org-policies"
 }
 
 module "vpc" {
