@@ -126,18 +126,16 @@ locals {
   ]
 
 }
-
-module "access_level_members" {
-  for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
-  source   = "terraform-google-modules/vpc-service-controls/google//modules/access_level"
-  version  = "~> 4.0"
+#module "access_level_members" {
+  #for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
+  #source   = "terraform-google-modules/vpc-service-controls/google//modules/access_level"
+  #version  = "~> 4.0"
 
   #description = "${module.vpc[each.key].project_id}-${each.key} Access Level"
   #policy      = data.tfe_outputs.org-policies.values.access_context_manager_policy_ids[each.value.access_context_manager_policy_name]
   #name        = "alp_${random_string.main[each.key].result}_members"
   #members     = each.value.vpc_access_members
 }
-
 resource "random_string" "main" {
   for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
   length   = 6
