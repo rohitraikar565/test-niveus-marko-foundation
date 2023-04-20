@@ -5,7 +5,7 @@ data "tfe_outputs" "host_project" {
 
 data "tfe_outputs" "admin-global" {
   organization = var.tfc_organization
-  workspace    = "01-niveus-cloud-administration-global"
+  workspace    = "01-cloud-administration-global"
 }
 
 data "tfe_outputs" "shared-services" {
