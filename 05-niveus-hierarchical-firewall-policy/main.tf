@@ -20,10 +20,10 @@ data "tfe_outputs" "admin-global" {
 }
 
 locals {
-  policy_id = google_compute_organization_security_policy.policy.id
+  policy_id = google_compute_organization_security_policy.policyy.id
 }
 
-resource "google_compute_organization_security_policy" "policy" {
+resource "google_compute_organization_security_policy" "policyy" {
   provider     = google-beta
   display_name = "common-firewall-rules"
   parent       = "organizations/${var.org_id}"
@@ -33,7 +33,7 @@ resource "google_compute_organization_security_policy_rule" "rule" {
   provider = google-beta
   for_each = var.rules
 
-  policy_id               = google_compute_organization_security_policy.policy.id
+  policy_id               = google_compute_organization_security_policy.policyy.id
   action                  = each.value.action
   direction               = each.value.direction
   priority                = each.value.priority
