@@ -136,41 +136,40 @@ locals {
   #name        = "alp_${random_string.main[each.key].result}_members"
   #members     = each.value.vpc_access_members
 }
-/*
-resource "random_string" "main" {
-  for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
-  length   = 6
-  special  = false
-  lower    = true
-  upper    = false
-  numeric  = true
-}
+#resource "random_string" "main" {
+  #for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
+  #length   = 6
+  #special  = false
+  #lower    = true
+  #upper    = false
+  #numeric  = true
+#}
 
-resource "time_sleep" "wait_vpc_sc_propagation" {
-  create_duration  = "60s"
-  destroy_duration = "60s"
+#resource "time_sleep" "wait_vpc_sc_propagation" {
+  #create_duration  = "60s"
+  #destroy_duration = "60s"
 
-  depends_on = [
-    module.vpc,
-    module.private_service_connect,
-    module.peering_zone,
-    module.peering_zone,
-    google_compute_global_address.private_service_access_address,
-    google_service_networking_connection.private_vpc_connection,
-    google_dns_policy.default_policy,
-    google_compute_firewall.deny_all_egress,
-    google_compute_firewall.allow_private_api_egress,
-    google_compute_firewall.allow_all_egress,
-    google_compute_firewall.allow_all_ingress,
-    google_compute_router.router,
-    google_compute_router_nat.nats,
-  ]
-}
+  #depends_on = [
+    #module.vpc,
+    #module.private_service_connect,
+    #module.peering_zone,
+    #module.peering_zone,
+    #google_compute_global_address.private_service_access_address,
+    #google_service_networking_connection.private_vpc_connection,
+    #google_dns_policy.default_policy,
+    #google_compute_firewall.deny_all_egress,
+    #google_compute_firewall.allow_private_api_egress,
+    #google_compute_firewall.allow_all_egress,
+    #google_compute_firewall.allow_all_ingress,
+    #google_compute_router.router,
+    #google_compute_router_nat.nats,
+  #]
+#}
 
-module "regular_service_perimeter" {
-  for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
-  source   = "terraform-google-modules/vpc-service-controls/google//modules/regular_service_perimeter"
-  version  = "~> 4.0"
+#module "regular_service_perimeter" {
+  #for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
+  #source   = "terraform-google-modules/vpc-service-controls/google//modules/regular_service_perimeter"
+  #version  = "~> 4.0"
 
   #policy         = data.tfe_outputs.org-policies.values.access_context_manager_policy_ids[each.value.access_context_manager_policy_name]
   #perimeter_name = "sp_${random_string.main[each.key].result}_default_perimeter"
@@ -178,14 +177,13 @@ module "regular_service_perimeter" {
   #resources      = [nonsensitive(data.tfe_outputs.host_project.values.projects[each.value.host_project].project_number)]
   #access_levels  = [module.access_level_members[each.key].name]
 
-  restricted_services     = length(each.value.restricted_services) != 0 ? each.value.restricted_services : local.supported_restricted_service
-  vpc_accessible_services = ["RESTRICTED-SERVICES"]
+  #restricted_services     = length(each.value.restricted_services) != 0 ? each.value.restricted_services : local.supported_restricted_service
+  #vpc_accessible_services = ["RESTRICTED-SERVICES"]
 
-  ingress_policies = each.value.ingress_policies
-  egress_policies  = each.value.egress_policies
+  #ingress_policies = each.value.ingress_policies
+  #egress_policies  = each.value.egress_policies
 
-  depends_on = [
-    time_sleep.wait_vpc_sc_propagation
-  ]
-}
-*/
+  #depends_on = [
+    #time_sleep.wait_vpc_sc_propagation
+  #]
+#}
