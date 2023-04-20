@@ -25,7 +25,7 @@ locals {
 
 resource "google_compute_organization_security_policy" "policyy" {
   provider     = google-beta
-  display_name = "common-firewall-rules"
+  display_name = "commonn-firewall-rules"
   parent       = "organizations/${var.org_id}"
 }
 
