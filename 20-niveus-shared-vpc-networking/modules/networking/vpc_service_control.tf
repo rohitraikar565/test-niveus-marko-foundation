@@ -135,7 +135,7 @@ locals {
   #policy      = data.tfe_outputs.org-policies.values.access_context_manager_policy_ids[each.value.access_context_manager_policy_name]
   #name        = "alp_${random_string.main[each.key].result}_members"
   #members     = each.value.vpc_access_members
- }
+ #}
 #resource "random_string" "main" {
   #for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
   #length   = 6
