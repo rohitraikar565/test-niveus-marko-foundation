@@ -37,6 +37,6 @@ module "projects" {
   default_service_account = "deprivilege"
 
   vpc_service_control_attach_enabled = each.value.vpc_service_control_attach_enabled
-  #vpc_service_control_perimeter_name = each.value.vpc_service_control_attach_enabled ? "accessPolicies/${data.tfe_outputs.org-policies.values.access_context_manager_policy_ids[each.value.access_context_manager_policy_name]}/servicePerimeters/${data.tfe_outputs.host_project_networking.values.vpc_service_perimeter[each.value.vpc_service_control_name].perimeter_name}" : null
+  vpc_service_control_perimeter_name = each.value.vpc_service_control_attach_enabled ? "accessPolicies/${data.tfe_outputs.org-policies.values.access_context_manager_policy_ids[each.value.access_context_manager_policy_name]}/servicePerimeters/${data.tfe_outputs.host_project_networking.values.vpc_service_perimeter[each.value.vpc_service_control_name].perimeter_name}" : null
   vpc_service_control_sleep_duration = each.value.vpc_service_control_sleep_duration
 }
