@@ -22,7 +22,7 @@ module "projects" {
   tfc_organization                   = var.tfc_organization
   terraform_service_account          = "tf-project-creator-dev"
   workload_identity_pool_provider_id = var.workload_identity_pool_provider_id
-  #tfc_host_project_workspace         = "10-shared-vpc-projects-dev"
+  tfc_host_project_workspace         = "10-shared-vpc-projects-dev"
   #tfc_host_networking_workspace      = "20-shared-vpc-networking-dev"
   folder                             = "dev"
   projects = {
