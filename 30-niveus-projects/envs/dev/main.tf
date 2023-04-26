@@ -46,10 +46,10 @@ module "projects" {
       }
     }
     restricted-svc-prj-dev = {
-      svpc_host_project = "restricted-shared-vpc-dev"
+      svpc_host_project = "nva-restricted-shared-vpc-dev"
       shared_vpc_subnets = [
         {
-          network     = "restricted-shared-network"
+          network     = "nva-restricted-shared-network"
           region      = "us-central1"
           subnet_name = "restricted-secondary"
         }
