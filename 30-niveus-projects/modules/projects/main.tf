@@ -13,10 +13,10 @@ data "tfe_outputs" "host_project_networking" {
   workspace    = var.tfc_host_networking_workspace
 }
 
-#data "tfe_outputs" "org-policies" {
-  #organization = var.tfc_organization
-  #workspace    = "03-org-policies"
-#}
+data "tfe_outputs" "org-policies" {
+  organization = var.tfc_organization
+  workspace    = "03-org-policies"
+}
 
 module "projects" {
   for_each             = var.projects
