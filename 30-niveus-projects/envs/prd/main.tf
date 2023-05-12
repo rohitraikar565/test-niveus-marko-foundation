@@ -56,7 +56,7 @@ module "projects" {
       ]
       vpc_service_control_attach_enabled = true
       access_context_manager_policy_name = "acme-policy"
-      vpc_service_control_name           = "niveus-restricted-shared-network"
+      vpc_service_control_name           = "restricted-shared-network"
       labels = {
         environment       = "prd"
         application_name  = "niveus-login-data-management"
