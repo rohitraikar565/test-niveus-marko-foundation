@@ -126,7 +126,6 @@ locals {
   ]
 
 }
-/*
 module "access_level_members" {
   for_each = { for k, v in var.shared_vpcs : k => v if v.access_context_manager_policy_name != null }
   source   = "terraform-google-modules/vpc-service-controls/google//modules/access_level"
@@ -188,4 +187,3 @@ module "regular_service_perimeter" {
     time_sleep.wait_vpc_sc_propagation
   ]
 }
-*/
